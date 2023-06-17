@@ -10,6 +10,8 @@ import torch, json , cv2 , detect
 st.title("Detection กังๆ")
 
 st.write("Upload your Image...")
+st.write("student = เล่นผิดที่")
+st.write("people = เล่นถูกที่")
 
 #model = torch.hub.load('./yolov5', 'custom', path='./last.pt', source='local')
 model = torch.hub.load('ultralytics/yolov5', 'custom', path='models/best.pt')
