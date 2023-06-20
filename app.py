@@ -24,8 +24,8 @@ if uploaded_file is not None:
   
   st.write("")
   st.write("Detecting...")
-  img_widld = imgRGB.shape[1]
-  center_img = img_widld/2
+  img_all = imgRGB.shape[1]
+  left_img = img_all/2
   result = model(imgRGB, size=600)
   
   detect_class = result.pandas().xyxy[0] 
@@ -36,11 +36,11 @@ if uploaded_file is not None:
   #0  148.605362   0.0    1022.523743  818.618286    0.813045      2      turtle
   st.code(detect_class[['name', 'xmin','ymin', 'xmax', 'ymax']])
   
-  #detect_left = detect_class[dect_class['axis']==center_img]
-  #textall= 'เจอนร.ทั้งหมด : '+str(detect_class.shape[0])+'คน'
-  #textvol= 'เจอนร.บนสนามvolleyทั้งหมด : '+str(detect_left.shape[0])+'คน'
-  #st.success(textall)
-  #st.success(textvol)
+  detect_left = detect_class[dect_class['xais']==left_img]
+  textall= 'เจอนร.ทั้งหมด : '+str(detect_class.shape[0])+'คน'
+  textvol= 'เจอนร.บนสนามvolleyทั้งหมด : '+str(detect_left.shape[0])+'คน'
+  st.success(textall)
+  st.success(textvol)
   outputpath = 'output.jpg'
   
   result.render()  # render bbox in image
