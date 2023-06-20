@@ -38,7 +38,7 @@ if uploaded_file is not None:
   
   detect_left = detect_class[detect_class['xmin'] == left_img]
   textall= 'เจอนร.ทั้งหมด : '+str(detect_class.shape[0])+'คน'
-  textvol= 'เจอนร.บนสนามvolleyทั้งหมด : '+str(detect_left.shape[0])+'คน'
+  textvol= 'เจอนร.บนสนามvolleyทั้งหมด : '+str(detect_left.shape[1])+'คน'
   st.success(textall)
   st.success(textvol)
   outputpath = 'output.jpg'
