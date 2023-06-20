@@ -36,7 +36,7 @@ if uploaded_file is not None:
   #0  148.605362   0.0    1022.523743  818.618286    0.813045      2      turtle
   st.code(detect_class[['name', 'xmin','ymin', 'xmax', 'ymax']])
   
-  detect_left = detect_class[dect_class['student']=center_img]
+  detect_left = detect_class[dect_class['axis']==center_img]
   textall= 'เจอนร.ทั้งหมด : '+str(detect_class.shape[0])+'คน'
   textvol= 'เจอนร.บนสนามvolleyทั้งหมด : '+str(detect_left.shape[0])+'คน'
   st.success(textall)
