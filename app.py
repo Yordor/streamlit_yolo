@@ -12,7 +12,7 @@ st.title("Detection กังๆ")
 st.write("Upload your Image...")
 
 #model = torch.hub.load('./yolov5', 'custom', path='./last.pt', source='local')
-model = torch.hub.load('ultralytics/yolov5', 'custom', path='models/best.pt')
+model = torch.hub.load('ultralytics/yolov5', 'custom', path='models/nimon.pt')
 uploaded_file = st.file_uploader("Choose .jpg pic ...", type="jpg")
 if uploaded_file is not None:
   
@@ -36,7 +36,7 @@ if uploaded_file is not None:
   #0  148.605362   0.0    1022.523743  818.618286    0.813045      2      turtle
   st.code(detect_class[['name', 'xmin','ymin', 'xmax', 'ymax']])
   
-  detect_left = detect_class[detect_class['ymin'] == left_img]
+  detect_left = detect_class[detect_class['xmin'] == left_img]
   textall= 'เจอนร.ทั้งหมด : '+str(detect_class.shape[0])+'คน'
   textvol= 'เจอนร.บนสนามvolleyทั้งหมด : '+str(detect_left.shape[1])+'คน'
   st.success(textall)
