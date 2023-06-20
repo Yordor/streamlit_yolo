@@ -9,8 +9,6 @@ import torch, json , cv2 , detect
 
 st.title("Detection กังๆ")
 
-st.write("student = เล่นผิดที่")
-st.write("people = เล่นถูกที่")
 st.write("Upload your Image...")
 
 #model = torch.hub.load('./yolov5', 'custom', path='./last.pt', source='local')
@@ -23,7 +21,7 @@ if uploaded_file is not None:
 
   imgRGB = cv2.cvtColor(image , cv2.COLOR_BGR2RGB)
   #st.image(imgRGB)
-
+  
   st.write("")
   st.write("Detecting...")
   result = model(imgRGB, size=600)
